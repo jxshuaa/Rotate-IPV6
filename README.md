@@ -14,7 +14,7 @@
 
 <ol>
     <li><strong>Clone the Repository:</strong>
-        <pre><code>git clone [https://github.com/yourusername/Rotate-IPV6.git](https://github.com/jxshuaa/Rotate-IPV6.git)</code></pre>
+        <pre><code>git clone https://github.com/jxshuaa/Rotate-IPV6.git</code></pre>
     </li>
     <li><strong>Navigate to the Directory:</strong>
         <pre><code>cd Rotate-IPV6</code></pre>
