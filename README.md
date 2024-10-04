@@ -9,6 +9,8 @@
 <h1>Rotate IPv6 Script</h1>
 <p>This project provides a simple script that allows you to rotate your IPv6 address every time it's executed. While it may seem trivial, it can be useful for various networking tasks.</p>
 
+<p>Before doing anything please get your Base IPv6 address and change it where it says CHANGEME.</p>
+
 <h2>Configuration Instructions</h2>
 <p>To set up the script on your system, follow these steps:</p>
 
