@@ -3,30 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rotate IPv6 Script</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        h2 {
-            color: #444;
-        }
-        pre {
-            background: #f4f4f4;
-            padding: 10px;
-            border-left: 3px solid #ccc;
-        }
-        code {
-            background: #eef;
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
-    </style>
 </head>
 <body>
 
@@ -38,49 +14,10 @@
 
 <ol>
     <li><strong>Clone the Repository:</strong>
-        <pre><code>git clone https://github.com/yourusername/Rotate-IPV6.git</code></pre>
+        <pre><code>git clone [https://github.com/yourusername/Rotate-IPV6.git](https://github.com/jxshuaa/Rotate-IPV6.git)</code></pre>
     </li>
     <li><strong>Navigate to the Directory:</strong>
         <pre><code>cd Rotate-IPV6</code></pre>
-    </li>
-    <li><strong>Create the Rotation Script:</strong>
-        <pre><code>nano rotate_ipv6.sh</code></pre>
-        <p>Copy and paste the following code into the file:</p>
-        <pre><code>#!/bin/bash
-
-INTERFACE="eth0"  # Replace with your actual interface name
-BASE_IP="2604:f440:1::2"  # Base of your /96 block
-
-# Define a list of specific addresses to rotate through
-ADDRESSES=(
-    "${BASE_IP}:0"
-    "${BASE_IP}:1"
-    "${BASE_IP}:2"
-    "${BASE_IP}:3"
-    "${BASE_IP}:4"
-    "${BASE_IP}:5"
-    "${BASE_IP}:6"
-    "${BASE_IP}:7"
-    "${BASE_IP}:8"
-    "${BASE_IP}:9"
-    "${BASE_IP}:a"
-    "${BASE_IP}:b"
-    "${BASE_IP}:c"
-    "${BASE_IP}:d"
-    "${BASE_IP}:e"
-    "${BASE_IP}:f"
-    "${BASE_IP}:0:a"
-)
-
-# Pick a random address from the list
-RANDOM_IP=${ADDRESSES[RANDOM % ${#ADDRESSES[@]}]}
-
-# Assign the new IP address to the interface
-ip -6 addr flush dev "$INTERFACE"  # Remove existing IPv6 addresses
-ip -6 addr add "$RANDOM_IP/96" dev "$INTERFACE"  # Add the new address
-
-echo "Changed IPv6 to $RANDOM_IP"</code></pre>
-        <p>Save the file and exit (Ctrl + O, Enter, Ctrl + X).</p>
     </li>
     <li><strong>Make the Script Executable:</strong>
         <pre><code>chmod +x rotate_ipv6.sh</code></pre>
