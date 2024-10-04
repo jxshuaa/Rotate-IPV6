@@ -3,7 +3,7 @@
 INTERFACE="eth0"  # Your actual interface name
 BASE_IP="CHANGEME"  # Base of your /96 block
 
-# Define a list of specific addresses to rotate through
+
 ADDRESSES=(
     "${BASE_IP}:0"
     "${BASE_IP}:1"
@@ -21,14 +21,14 @@ ADDRESSES=(
     "${BASE_IP}:d"
     "${BASE_IP}:e"
     "${BASE_IP}:f"
-    "${BASE_IP}:0:a"  # Include the specific address you mentioned
+    "${BASE_IP}:0:a"
 )
 
-# Pick a random address from the list
+
 RANDOM_IP=${ADDRESSES[RANDOM % ${#ADDRESSES[@]}]}
 
-# Assign the new IP address to the interface
-ip -6 addr flush dev "$INTERFACE"  # Remove existing IPv6 addresses
-ip -6 addr add "$RANDOM_IP/96" dev "$INTERFACE"  # Add the new address
+
+ip -6 addr flush dev "$INTERFACE"
+ip -6 addr add "$RANDOM_IP/96" dev "$INTERFACE"
 
 echo "Changed IPv6 to $RANDOM_IP"
